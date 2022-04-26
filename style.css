@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --body-bg: #fafafa;
+    --box-bg: #fff;
+    --box-border-color: #dbdbdb;
+    --txt-color: #262626;
+    --txt-second-color: #8e8e8e;
+    --btn-bg: #0095f6;
+    --btn-color: #fff;
+    --fb-color: #385185;
+    --a-color: #00376b;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Roboto", sans-serif;
+    background-color: #fafafa;
+    color: #262626;
+}
+
+.container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.principal-container{
+    display: flex;
+    flex-grow: 1;
+}
+
+.principal-content{
+    margin: 32px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 935px;
+    flex-grow: 1;
+}
+
+/* Definir posição da animação no background*/
+.principal-content .slide-container{
+    background-size: 618px;
+    background-position-x: -130px;;
+}
+
+/* Definir tamanho do background estatico*/
+.slide-container{
+    height: 600px;
+    flex-basis: 450px;    
+}
+
+/* Definir posição da animação no background*/
+.slide-content{
+    margin: 85px 0 0 161px;
+    position: relative;
+}
+
+/* Config das imagens animadas*/
+.slide-content img {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease-in-out;
+    height: 475px;
+}
+
+/* Config das imagens animadas*/
+.slide-content img.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.form-container{
+    flex-grow: 1;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.box{
+    border: 1px solid #dbdbdb;
+    background-color: #fafafa;
+    border-radius: 3px;
+}
+
+.form-content{
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.form-content .logo{
+    text-align: center;
+    height: 51px;
+    width: 175px;
+    margin: 22px auto 12px;
+}
+
+.form-content .logo img{
+    max-width: 100%;
+}
+
+.signin-form{
+    padding-top: 24px;
+    margin-bottom: 10px;
+}
+
+.form-group{
+    margin: 0 40px 6px;
+}
+
+
+/* Estilo da caixa de login e senha */
+.animate-input{
+    height: 36px;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    position: relative;
+}
+
+/* Estilo do texto de login e senha */
+.animate-input span {
+    position: absolute;
+    left: 8px;
+    height: 100%;
+    font-size: 12px;
+    line-height: 36px;
+    color: var(--txt-second-color);
+    transform-origin: left;
+    transition: transform 0.1s ease-in-out;
+    pointer-events: none;
+}
+
+/* Estilo do texto de login e senha */
+.animate-input input {
+    width: 100%;
+    height: 100%;
+    padding: 9px 8px 7px;
+    border: 0;
+    outline: 0;
+    background-color: var(--box-bg);
+    color: var(--txt-color);
+}
+
+.animate-input.active span {
+    transform: scale(0.83333) translateY(-10px);
+}
+
+.animate-input.active input {
+    padding: 14px 0 2px 8px;
+}
+
+.animate-input button {
+    color: var(--txt-color);
+    border: 0;
+    outline: 0;
+    display: inline;
+    font-weight: 600;
+    font-size: 14px;
+    background-color: transparent;
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    display: none;
+}
+
+.animate-input.active button {
+    display: inline;
+}
+
+/* Estilo do botao Login */
+
+.btn-group {
+    padding: 8px 40px;
+}
+
+.btn-login {
+    width: 100%;
+    border: 1px solid transparent;
+    outline: 0;
+    background-color: #0095f6;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 5px 9px;
+    border-radius: 4px;
+}
+
+button:disabled {
+    background-color: #385185;
+}
+
+/* Criar linha de divisão */
+
+.divisao {
+    padding: 10px 40px 18px;
+    display: flex;
+}
+
+.divisao .texto-divisao{
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 15px;
+    margin: 0 18px;
+    color: #8e8e8e;
+}
+
+.divisao .linha1,
+.divisao .linha2{
+    flex-grow: 1;
+    height: 1px;
+    background-color: #dbdbdb;
+    position: relative;
+    top: 0.45em;
+}
+
+/* Criar botão Facebook */
+
+.btn-fb {
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    cursor: pointer;
+}
+
+/* Imagem ao lado do botao */
+.btn-fb img {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+}
+
+/* Texto ao lado do botao */
+.btn-fb span {
+    color: var(--fb-color);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+}
+
+.esqueceu {
+    display: block;
+    font-size: 12px;
+    line-height: 14px;
+    margin-top: 12px;
+    text-align: center;
+    color: #00376b;
+    text-decoration: none;
+}
+
+/* Box Cadastre-se */
+.box-cadastro {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #dbdbdb;
+    background-color: #fafafa;
+    border-radius: 3px;
+}
+
+.box-cadastro p {
+    font-size: 14px;
+    margin: 15px;
+    text-align: center;
+}
+
+.box-cadastro a {
+    text-decoration: none;
+    color: #0095f6;
+    font-size: inherit;
+    line-height: 18px;
+    font-weight: 600;
+}
+
+/* Imagens de botao de Download */
+.app-download {
+    display: flex;
+    flex-direction: column;
+}
+
+.app-download p {
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    margin: 10px 20px;
+}
+
+.link-loja {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.link-loja a img {
+    height: 40px;
+}
+
+.link-loja .appstore {
+    margin-right: 8px;
+}
+
+
+/* Rodapé */
+.footer {
+    padding-bottom: 52px;
+    padding-top: 24px;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.links a {
+    text-decoration: none;
+    color: var(--txt-second-color);
+    font-size: 13px;
+    line-height: 18px;
+    margin: 0 8px 12px 8px;
+}
+
+.copyright {
+    padding: 12px 0;
+    color: #8e8e8e;
+    font-size: 13px;
+    line-height: 18px;
+    text-align: center;
+}
+
+/* Comandos para tornar Responsive */
+
+@media only screen and (max-width: 800px) {
+    .slide-container {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .main-content {
+        margin-top: 0;
+    }
+
+    .box {
+        border: 0;
+        background-color: transparent;
+    }
+}
